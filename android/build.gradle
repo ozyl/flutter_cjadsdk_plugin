@@ -1,0 +1,82 @@
+group 'com.example.flutter_cjadsdk_plugin'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs project(':flutter_cjadsdk_plugin').file('libs')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+
+    // 基础所需
+    implementation 'com.google.protobuf:protobuf-java:4.27.2'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'//使用视频内容组件需要引入recyclerview
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+
+
+    implementation(name:"hailiang-3.468.13.434",ext:"aar")
+    implementation(name:"anythink_6.4.38",ext:"aar")
+    implementation(name:"Baidu_MobAds_SDK-release_v9.38",ext:"aar")
+    implementation(name:"GDTSDK.unionNormal.4.620.1490",ext:"aar")
+    implementation(name:"jyadsdk_2.0.33",ext:"aar")
+    implementation(name:"kssdk-ad-3.3.74-publishRelease-3fd643b305",ext:"aar")
+    implementation(name:"mobileAd-3.2.0",ext:"aar")
+    implementation(name:"lingye_ad_sdk_1.6.2.5",ext:"aar")
+    implementation(name:"oaid_sdk_1.0.25",ext:"aar")
+    implementation(name:"open_ad_sdk_6.7.0.6",ext:"aar")
+    implementation(name:"wind-common-1.7.7",ext:"aar")
+    implementation(name:"wind-sdk-4.21.1",ext:"aar")
+}
