@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.flutter_cjadsdk_plugin">
+  package="com.example.flutter_cjadsdk_plugin"
+    xmlns:tools="http://schemas.android.com/tools">
     <application>
         <activity
             android:name=".ShortVideoActivity"
             android:allowBackup="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name="com.hailiang.advlib.ui.front.InciteADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            tools:replace="android:theme"
+            android:theme="@style/ReplaceNoActionBarTheme" />
     </application>
 </manifest>
