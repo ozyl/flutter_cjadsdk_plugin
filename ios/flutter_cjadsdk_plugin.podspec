@@ -18,7 +18,7 @@ A new Flutter plugin project.
   s.resource = 'Resource/*.bundle'
   
   s.dependency 'Flutter'
-  s.dependency 'CJMobileAd', '2.3.95'
+  s.dependency 'CJMobileAd', '2.3.98.2'
   
   s.platform = :ios, '11.0'
 

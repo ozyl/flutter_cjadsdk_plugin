@@ -124,7 +124,7 @@ static FlutterCjadsdkPlugin *plugin = nil;
         }
     }
     if ([call.method isEqualToString:splashFuncName]) {
-        CJSplashAd *splashAd = [[CJSplashAd alloc] initWithResourceId:advertId window:window rootViewController:window.rootViewController customLogoView: [UIView new]];
+        CJSplashAd *splashAd = [[CJSplashAd alloc] initWithResourceId:advertId rootViewController:window.rootViewController customLogoView: [UIView new]];
         splashAd.delegate = self;
         [splashAd loadAdData];
         self.splashAd = splashAd;
